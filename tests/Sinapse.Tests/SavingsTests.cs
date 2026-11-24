@@ -110,10 +110,9 @@ public sealed class SavingsTests : IDisposable
     [Fact]
     public void Corrupt_line_is_tolerated_by_fallback_and_report()
     {
-        File.WriteAllText(Log, "{truncated
-" +
-            "{\"ts\":\"2026-01-02T03:04:05\",\"pergunta\":\"q\",\"notas\":1,\"returned_tokens\":10,\"manual_tokens\":20,\"saved_tokens\":10}
-");
+        File.WriteAllLines(Log, [
+            "{truncated",
+            """{"ts":"2026-01-02T03:04:05","pergunta":"q","notas":1,"returned_tokens":10,"manual_tokens":20,"saved_tokens":10}"""]);
         Assert.StartsWith("Fallback registrado", SavingsLog.RegisterFallback(Log, "q", 5));
         Assert.Equal("{truncated", File.ReadAllLines(Log)[0]);
         SavingsReport.Write(Log, Path.Combine(dir, "r.html"));
