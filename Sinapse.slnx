@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Sinapse.Core/Sinapse.Core.csproj" />
+    <Project Path="src/Sinapse/Sinapse.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Sinapse.Tests/Sinapse.Tests.csproj" />
+  </Folder>
+</Solution>

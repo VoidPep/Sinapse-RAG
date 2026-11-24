@@ -1,0 +1,157 @@
+{
+ "catalogo/emprestimos.md": {
+  "tipo": "regra",
+  "area": "circulacao",
+  "chunks": [
+   {
+    "heading": "Empréstimos",
+    "text": "# Empréstimos\n\nRegras gerais de empréstimo da Biblioteca Aurora. Veja também [[renovacao]] e [[catalogo/multas|multas]].\n\n## Prazos\n\nO prazo padrão de empréstimo é de quatorze dias corridos para livros de acervo geral.\n\n### Acervo especial\n\nObras raras e periódicos têm prazo de três dias e não podem sair da biblioteca nos fins de semana.\n\n## Limites\n\nCada leitor pode manter até cinco livros emprestados ao mesmo tempo. Leitores com multa em aberto ficam bloqueados.\n\n# Devolução\n\nA devolução pode ser feita no balcão ou na caixa externa. Consulte [[politica#devolucao]] para os detalhes."
+   }
+  ],
+  "links": [
+   "multas",
+   "politica",
+   "renovacao"
+  ]
+ },
+ "catalogo/multas.md": {
+  "tipo": "referencia",
+  "area": "financeiro",
+  "chunks": [
+   {
+    "heading": "",
+    "text": "Texto introdutório sobre multas, escrito antes de qualquer título, para testar o heading vazio.\n\n# Multas\n\nA multa por atraso é de cinquenta centavos por dia e por item, limitada ao valor do livro.\n\n## Pagamento\n\nO pagamento é feito no balcão ou pelo portal. Após o pagamento o bloqueio do leitor é removido na mesma hora."
+   }
+  ],
+  "links": []
+ },
+ "catalogo/renovacao.md": {
+  "tipo": "regra",
+  "area": "circulacao",
+  "chunks": [
+   {
+    "heading": "Renovação",
+    "text": "# Renovação\n\nA renovação estende o prazo de empréstimo por mais sete dias, desde que não exista reserva para o título.\n\n## Como renovar\n\nO leitor pode renovar pelo portal, pelo aplicativo ou no balcão. Cada empréstimo aceita no máximo duas renovações consecutivas.\n\n## Bloqueios\n\nItens atrasados não podem ser renovados. A configuração do portal impede a ação automaticamente."
+   }
+  ],
+  "links": []
+ },
+ "copia-a.md": {
+  "tipo": "duplicado",
+  "area": "",
+  "chunks": [
+   {
+    "heading": "Horário",
+    "text": "# Horário\n\nO horário de funcionamento da biblioteca é de segunda a sexta, das oito às dezoito horas, com pausa de manutenção semanal."
+   }
+  ],
+  "links": []
+ },
+ "copia-b.md": {
+  "tipo": "duplicado",
+  "area": "",
+  "chunks": [
+   {
+    "heading": "Horário",
+    "text": "# Horário\n\nO horário de funcionamento da biblioteca é de segunda a sexta, das oito às dezoito horas, com pausa de manutenção semanal."
+   }
+  ],
+  "links": []
+ },
+ "crlf.md": {
+  "tipo": "windows",
+  "area": "edicao",
+  "chunks": [
+   {
+    "heading": "Arquivo com CRLF",
+    "text": "# Arquivo com CRLF\n\nEste arquivo foi salvo com quebras de linha do Windows e precisa ser lido sem retorno de carro.\n\n## Segunda seção\n\nOutro parágrafo com conteúdo suficiente para formar um trecho próprio no índice."
+   }
+  ],
+  "links": []
+ },
+ "curto.md": {
+  "tipo": "nota",
+  "area": "",
+  "chunks": [
+   {
+    "heading": "Curto",
+    "text": "# Curto\n\nOk.\n\n# Detalhe\n\nEste trecho tem tamanho suficiente para sobreviver ao corte mínimo de trinta caracteres."
+   }
+  ],
+  "links": []
+ },
+ "estrutura.md": {
+  "tipo": "guia",
+  "area": "atendimento",
+  "chunks": [
+   {
+    "heading": "",
+    "text": "Introdução curta ao atendimento, escrita antes do primeiro título da nota.\n\n# Atendimento\n\nO leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor geral consulta o acervo, reserva tí"
+   },
+   {
+    "heading": "Atendimento > Presencial",
+    "text": "## Presencial\n\nO leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor presencial consulta o acervo, reserva títulos e devolve exemplares no balcão. O le"
+   },
+   {
+    "heading": "Atendimento > Presencial > Fila prioritária",
+    "text": "### Fila prioritária\n\nO leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor prioritário consulta o acervo, reserva títulos e devolve exemplares no balc"
+   },
+   {
+    "heading": "Atendimento > Remoto",
+    "text": "## Remoto\n\nO leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, reserva títulos e devolve exemplares no balcão. O leitor remoto consulta o acervo, r"
+   }
+  ],
+  "links": []
+ },
+ "longo.md": {
+  "tipo": "manual",
+  "area": "",
+  "chunks": [
+   {
+    "heading": "Procedimento longo",
+    "text": "tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta lombada prateleira higienização restauro tombamento catalogação etiqueta "
+   },
+   {
+    "heading": "Procedimento longo",
+    "text": "lombada pr\n\nParágrafo final curto mas acima do mínimo de caracteres."
+   }
+  ],
+  "links": []
+ },
+ "mesclagem.md": {
+  "tipo": "glossario",
+  "area": "",
+  "chunks": [
+   {
+    "heading": "Glossário",
+    "text": "# Glossário\n\n## Acervo\n\nConjunto de obras disponíveis para consulta e empréstimo.\n\n## Exemplar\n\nCada unidade física de um título cadastrado no acervo.\n\n## Título\n\nObra identificada por autor, nome e edição, independente de quantas cópias existam.\n\n## Reserva\n\nPedido de um leitor para ser o próximo a retirar um título emprestado.\n\n## Balcão\n\nPonto de atendimento presencial para retirada, devolução e pagamento."
+   }
+  ],
+  "links": []
+ },
+ "politica.md": {
+  "tipo": "outro",
+  "area": "",
+  "chunks": [
+   {
+    "heading": "",
+    "text": "Política geral da biblioteca, sem frontmatter. Este texto fica antes do primeiro título e deve virar uma seção de heading vazio.\n\n# Política\n\n## Devolucao\n\nDevolução em caixa externa é registrada na manhã do dia útil seguinte, então a data oficial é a do registro.\n\n## Silêncio\n\nOs ambientes de estudo em grupo permitem conversas em tom baixo; salas individuais exigem silêncio absoluto."
+   }
+  ],
+  "links": []
+ },
+ "área comum/configuração.md": {
+  "tipo": "guia",
+  "area": "infraestrutura",
+  "chunks": [
+   {
+    "heading": "Configuração",
+    "text": "# Configuração\n\nA configuração das estações de pesquisa exige ação do administrador: ativar o modo quiosque e limitar a navegação ao catálogo.\n\n## Ação rápida\n\nPara reiniciar uma estação travada, use a ação rápida do painel; a sessão do leitor é encerrada sem perda de dados. Veja [[renovacao]] e [[emprestimos#Prazos]]."
+   }
+  ],
+  "links": [
+   "emprestimos",
+   "renovacao"
+  ]
+ }
+}

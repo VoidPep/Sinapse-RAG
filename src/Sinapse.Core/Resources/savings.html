@@ -1,0 +1,21 @@
+<!doctype html><html lang="pt-br"><meta charset="utf-8"><title>Economia de tokens</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>body{font-family:system-ui;max-width:1000px;margin:24px auto;padding:0 16px}#tot{font-size:1.3em}</style>
+<h2>Economia de tokens — Sinapse</h2><p id="tot"></p>
+<canvas id="dia"></canvas><h3>Por busca</h3><div id="bw"><canvas id="busca"></canvas></div>
+<script>
+const R = /*DATA*/;
+const fmt = n => n.toLocaleString('pt-BR'), dias = {};
+R.forEach(r => { const d = r.ts.slice(0, 10); (dias[d] ??= {n: 0, s: 0}); dias[d].n++; dias[d].s += r.saved_tokens; });
+const D = Object.keys(dias).sort(); let acc = 0;
+document.getElementById('tot').textContent = `${R.length} buscas · ${fmt(R.reduce((a, r) => a + r.saved_tokens, 0))} tokens economizados`;
+new Chart(dia, {data: {labels: D, datasets: [
+  {type: 'bar', label: 'Economizado no dia', data: D.map(d => dias[d].s)},
+  {type: 'line', label: 'Acumulado', data: D.map(d => acc += dias[d].s)}]},
+  options: {plugins: {tooltip: {callbacks: {afterLabel: c => c.datasetIndex ? '' : dias[D[c.dataIndex]].n + ' buscas'}}}}});
+bw.style.height = (60 + R.length * 26) + 'px';
+new Chart(busca, {type: 'bar', data: {labels: R.map(r => r.ts.slice(5, 16).replace('T', ' ') + ' · ' + r.pergunta.slice(0, 50)),
+  datasets: [{label: 'Economizado', data: R.map(r => r.saved_tokens), backgroundColor: R.map(r => r.saved_tokens < 0 ? '#e5484d' : r.notas ? '#3e8ed0' : '#aaa')},
+             {label: 'Retornado', data: R.map(r => r.returned_tokens)}]},
+  options: {indexAxis: 'y', maintainAspectRatio: false}});
+</script></html>

@@ -1,0 +1,145 @@
+[
+ {
+  "pergunta": "prazo de empréstimo",
+  "k": 6,
+  "tipo": null,
+  "pasta": null,
+  "hits": [
+   {
+    "path": "catalogo/emprestimos.md",
+    "heading": "Empréstimos",
+    "score": 3.89
+   },
+   {
+    "path": "catalogo/renovacao.md",
+    "heading": "Renovação",
+    "score": 3.79
+   },
+   {
+    "path": "mesclagem.md",
+    "heading": "Glossário",
+    "score": 1.42
+   }
+  ]
+ },
+ {
+  "pergunta": "acao rapida",
+  "k": 6,
+  "tipo": null,
+  "pasta": null,
+  "hits": [
+   {
+    "path": "área comum/configuração.md",
+    "heading": "Configuração",
+    "score": 6.36
+   },
+   {
+    "path": "catalogo/renovacao.md",
+    "heading": "Renovação",
+    "score": 1.86
+   }
+  ]
+ },
+ {
+  "pergunta": "renovação portal bloqueio multa",
+  "k": 6,
+  "tipo": null,
+  "pasta": null,
+  "hits": [
+   {
+    "path": "catalogo/multas.md",
+    "heading": "",
+    "score": 6.28
+   },
+   {
+    "path": "catalogo/renovacao.md",
+    "heading": "Renovação",
+    "score": 5.2
+   },
+   {
+    "path": "catalogo/emprestimos.md",
+    "heading": "Empréstimos",
+    "score": 2.72
+   },
+   {
+    "path": "área comum/configuração.md",
+    "heading": "Configuração",
+    "score": 1.5
+   }
+  ]
+ },
+ {
+  "pergunta": "multa",
+  "k": 6,
+  "tipo": "regra",
+  "pasta": null,
+  "hits": [
+   {
+    "path": "catalogo/emprestimos.md",
+    "heading": "Empréstimos",
+    "score": 1.54
+   }
+  ]
+ },
+ {
+  "pergunta": "prazo",
+  "k": 6,
+  "tipo": null,
+  "pasta": "catalogo/",
+  "hits": [
+   {
+    "path": "catalogo/emprestimos.md",
+    "heading": "Empréstimos",
+    "score": 2.2
+   },
+   {
+    "path": "catalogo/renovacao.md",
+    "heading": "Renovação",
+    "score": 1.86
+   }
+  ]
+ },
+ {
+  "pergunta": "renovação portal bloqueio multa",
+  "k": 2,
+  "tipo": null,
+  "pasta": null,
+  "hits": [
+   {
+    "path": "catalogo/multas.md",
+    "heading": "",
+    "score": 6.28
+   },
+   {
+    "path": "catalogo/renovacao.md",
+    "heading": "Renovação",
+    "score": 5.2
+   }
+  ]
+ },
+ {
+  "pergunta": "horário de funcionamento",
+  "k": 6,
+  "tipo": null,
+  "pasta": null,
+  "hits": [
+   {
+    "path": "copia-a.md",
+    "heading": "Horário",
+    "score": 5.8
+   },
+   {
+    "path": "copia-b.md",
+    "heading": "Horário",
+    "score": 5.8
+   }
+  ]
+ },
+ {
+  "pergunta": "zzzqqq",
+  "k": 6,
+  "tipo": null,
+  "pasta": null,
+  "hits": []
+ }
+]
