@@ -19,7 +19,7 @@ O objetivo é transformar isso em um produto genérico e distribuível — **Sin
 3. Nenhuma referência à empresa, ao usuário ou a caminhos locais (código, textos das tools, README).
 4. Um executável único, self-contained, para `win-x64` e `linux-x64`, gerado por release no GitHub.
 5. Paridade de resultados com o protótipo: mesmos chunks e mesma ordem de busca para o mesmo conteúdo.
-6. Repositório público: MIT, `.gitignore`, README, branches `main` (releases) e `development`.
+6. Repositório público: MIT, `.gitignore`, README, branches `main` (releases), `develop` (integração) e `feat/*`.
 
 ## Não-objetivos (v1)
 
