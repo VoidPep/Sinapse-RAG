@@ -15,7 +15,7 @@ public static class Indexer
         """;
 
     /// <summary>
-    /// Builds into index.db.tmp, then swaps it over index.db. Other processes may hold the old
+    /// Builds into a unique index.db-{guid}.tmp, then swaps it over index.db. Other processes may hold the old
     /// db open: if the swap keeps failing the old index stays intact and IOException is thrown.
     /// </summary>
     public static IndexResult Build(SinapseConfig c)
@@ -23,8 +23,7 @@ public static class Indexer
         var sw = Stopwatch.StartNew();
         var notes = Config.EnumerateNotes(c);
         Directory.CreateDirectory(c.DataDir);
-        var tmp = c.DbPath + ".tmp";
-        DeleteQuietly(tmp);
+        var tmp = $"{c.DbPath}-{Guid.NewGuid():N}.tmp";
 
         try
         {

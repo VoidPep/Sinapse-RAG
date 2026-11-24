@@ -56,6 +56,7 @@ public static class Config
         string Resolve(string p) => Path.TrimEndingDirectorySeparator(Path.GetFullPath(Path.Combine(dir, p.Replace('\\', '/'))));
 
         var baseDir = Resolve(dto.Base ?? ".");
+        if (!Directory.Exists(baseDir)) throw new ConfigException($"Pasta base não encontrada: {baseDir}");
         var folders = new List<string>();
         foreach (var f in dto.Folders ?? [])
         {
@@ -91,7 +92,7 @@ public static class Config
         var notes = new List<Note>();
         foreach (var folder in c.Folders.Count == 0 ? [c.BaseDir] : c.Folders)
         {
-            if (!Directory.Exists(folder)) continue;
+            if (!Directory.Exists(folder)) throw new ConfigException($"Pasta não encontrada: {folder}");
             foreach (var full in Directory.EnumerateFiles(folder, "*", new EnumerationOptions { RecurseSubdirectories = true, IgnoreInaccessible = true, AttributesToSkip = 0 }))
             {
                 if (full.StartsWith(c.DataDir + Path.DirectorySeparatorChar, PathCmp)) continue;

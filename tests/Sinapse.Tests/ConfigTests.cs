@@ -57,6 +57,13 @@ public sealed class ConfigTests : IDisposable
     }
 
     [Fact]
+    public void Load_missing_base_throws_ConfigException()
+    {
+        var e = Assert.Throws<ConfigException>(() => Config.Load(Cfg("""{"base":"ghost","folders":[]}""")));
+        Assert.Contains("Pasta base não encontrada", e.Message);
+    }
+
+    [Fact]
     public void Enumerate_excludes_obsidian_at_any_depth()
     {
         Touch("x.md"); Touch(".obsidian/a.md"); Touch("sub/.obsidian/b.md");

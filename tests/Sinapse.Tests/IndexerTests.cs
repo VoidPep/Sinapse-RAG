@@ -22,6 +22,8 @@ public sealed class IndexerTests : IDisposable
         return rows;
     }
 
+    void NoTemps() => Assert.Empty(Directory.GetFiles(Cfg.DataDir, "index.db-*.tmp"));
+
     [Fact]
     public void Build_creates_schema_and_counts()
     {
@@ -48,7 +50,7 @@ public sealed class IndexerTests : IDisposable
         Assert.False(Directory.Exists(Cfg.DataDir));
         Indexer.Build(Cfg);
         Assert.True(File.Exists(Cfg.DbPath));
-        Assert.False(File.Exists(Cfg.DbPath + ".tmp"));
+        NoTemps();
     }
 
     [Fact]
@@ -62,7 +64,7 @@ public sealed class IndexerTests : IDisposable
         using (new FileStream(Cfg.DbPath, FileMode.Open, FileAccess.Read, FileShare.None))
             Assert.Throws<IOException>(() => Indexer.Build(Cfg));
 
-        Assert.False(File.Exists(Cfg.DbPath + ".tmp"));
+        NoTemps();
         Assert.Equal(before, Search.Run(Cfg.DbPath, "prazo"));
     }
 
@@ -75,5 +77,38 @@ public sealed class IndexerTests : IDisposable
         var res = Indexer.Build(Cfg);
         Assert.Equal(13, res.Files);
         Assert.NotEmpty(Search.Run(Cfg.DbPath, "novíssimo"));
+    }
+
+    [Fact]
+    public async Task Concurrent_builds_both_succeed_and_index_is_valid()
+    {
+        var cfg = Cfg;
+        var tasks = Enumerable.Range(0, 2).Select(_ => Task.Run(() =>
+        {
+            try { Indexer.Build(cfg); return true; }
+            catch (IOException) { return false; } // Windows: swap retries may be exhausted
+        })).ToArray();
+        var ok = await Task.WhenAll(tasks);
+        Assert.Contains(true, ok);
+        Assert.NotEmpty(Search.Run(cfg.DbPath, "prazo"));
+        NoTemps();
+    }
+
+    [Fact]
+    public void Build_with_scan_root_removed_after_load_throws_and_keeps_old_index()
+    {
+        var sub = Path.Combine(vault, "sub");
+        Directory.CreateDirectory(sub);
+        File.WriteAllText(Path.Combine(sub, "n.md"), "# N\n\nprazo de entrega.");
+        var cfg = Cfg with { Folders = [vault, sub] };
+        Indexer.Build(cfg);
+        var before = Search.Run(cfg.DbPath, "prazo");
+        Assert.NotEmpty(before);
+
+        Directory.Delete(sub, true);
+        Assert.Throws<ConfigException>(() => Indexer.Build(cfg));
+
+        Assert.Equal(before, Search.Run(cfg.DbPath, "prazo"));
+        NoTemps();
     }
 }

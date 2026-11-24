@@ -50,6 +50,14 @@ public sealed class CliTests : IDisposable
     }
 
     [Fact]
+    public void Index_with_missing_base_exits_2()
+    {
+        var (code, _, _) = Run("index", "--config", Cfg("""{"base":"ghost"}"""));
+        Assert.Equal(2, code);
+        Assert.False(Directory.Exists(Path.Combine(vault, ".sinapse")));
+    }
+
+    [Fact]
     public void Index_with_invalid_config_exits_2_and_json_error()
     {
         var (code, o, _) = Run("index", "--config", Cfg("{oops"), "--json");
