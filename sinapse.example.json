@@ -1,0 +1,8 @@
+{
+  "name": "meu-vault",
+  "base": ".",
+  "folders": ["notas", "2_SMS"],
+  "include": ["**/*.md"],
+  "exclude": ["**/.obsidian/**", "**/.trash/**", "98_templates/**"],
+  "dataDir": ".sinapse"
+}
