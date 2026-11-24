@@ -18,9 +18,9 @@ Por padrão o arquivo fica ao lado do executável; `--config <arquivo>` escolhe 
 {
   "name": "meu-vault",
   "base": ".",
-  "folders": ["notas", "2_SMS"],
+  "folders": ["notas", "projetos"],
   "include": ["**/*.md"],
-  "exclude": ["**/.obsidian/**", "**/.trash/**", "98_templates/**"],
+  "exclude": ["**/.obsidian/**", "**/.trash/**", "templates/**"],
   "dataDir": ".sinapse"
 }
 ```

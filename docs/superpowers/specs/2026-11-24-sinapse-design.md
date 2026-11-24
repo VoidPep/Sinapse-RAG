@@ -89,9 +89,9 @@ Localização: por padrão, ao lado do executável (o usuário coloca o exe no v
 {
   "name": "meu-vault",
   "base": ".",
-  "folders": ["notas", "2_SMS"],
+  "folders": ["notas", "projetos"],
   "include": ["**/*.md"],
-  "exclude": ["**/.obsidian/**", "**/.trash/**", "98_templates/**"],
+  "exclude": ["**/.obsidian/**", "**/.trash/**", "templates/**"],
   "dataDir": ".sinapse"
 }
 ```
