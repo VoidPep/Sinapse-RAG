@@ -1,0 +1,14 @@
+bin/
+obj/
+.vs/
+.idea/
+*.user
+TestResults/
+*.db
+*.db-*
+*.db.tmp
+savings.jsonl
+/savings.html
+.sinapse/
+sinapse.json
+publish/
