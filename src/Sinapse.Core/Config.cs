@@ -92,7 +92,7 @@ public static class Config
         foreach (var folder in c.Folders.Count == 0 ? [c.BaseDir] : c.Folders)
         {
             if (!Directory.Exists(folder)) continue;
-            foreach (var full in Directory.EnumerateFiles(folder, "*", SearchOption.AllDirectories))
+            foreach (var full in Directory.EnumerateFiles(folder, "*", new EnumerationOptions { RecurseSubdirectories = true, IgnoreInaccessible = true, AttributesToSkip = 0 }))
             {
                 if (full.StartsWith(c.DataDir + Path.DirectorySeparatorChar, PathCmp)) continue;
                 var rel = Path.GetRelativePath(c.BaseDir, full).Replace('\\', '/');

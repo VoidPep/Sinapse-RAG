@@ -42,13 +42,11 @@ public sealed class CliTests : IDisposable
     }
 
     [Fact]
-    public void Index_without_config_writes_default_and_succeeds()
+    public void Index_with_missing_explicit_config_exits_2_and_creates_nothing()
     {
-        var p = Path.Combine(vault, "sinapse.json");
-        var (code, _, err) = Run("index", "--config", p);
-        Assert.Equal(0, code);
-        Assert.True(File.Exists(p));
-        Assert.Contains("padrão", err);
+        var p = Path.Combine(vault, "typo.json");
+        Assert.Equal(2, Run("index", "--config", p).Code);
+        Assert.False(File.Exists(p));
     }
 
     [Fact]

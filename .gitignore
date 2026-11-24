@@ -8,7 +8,7 @@ TestResults/
 *.db-*
 *.db.tmp
 savings.jsonl
-savings.html
+/savings.html
 .sinapse/
 sinapse.json
 publish/

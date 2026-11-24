@@ -14,7 +14,10 @@ public static class SavingsReport
 
         var recs = new JsonArray();
         foreach (var line in File.ReadLines(logPath).Where(l => l.Trim().Length > 0))
-            recs.Add(JsonNode.Parse(line));
+        {
+            try { recs.Add(JsonNode.Parse(line)); }
+            catch (JsonException) { } // skip a corrupt or truncated line
+        }
         // "</" would let a question close the <script> element
         var data = recs.ToJsonString(Json).Replace("</", "<\\/");
 

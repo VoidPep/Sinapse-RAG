@@ -41,7 +41,7 @@ public static class Indexer
     static int Fill(string dbFile, IReadOnlyList<Note> notes)
     {
         var n = 0;
-        using (var con = new SqliteConnection($"Data Source={dbFile};Pooling=False"))
+        using (var con = new SqliteConnection(new SqliteConnectionStringBuilder { DataSource = dbFile, Pooling = false }.ConnectionString))
         {
             con.Open();
             Exec(con, "PRAGMA journal_mode=OFF; PRAGMA synchronous=OFF;");

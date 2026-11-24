@@ -51,7 +51,11 @@ public static class SavingsLog
     public static string RegisterFallback(string logPath, string question, int manualTokens)
     {
         var lines = File.Exists(logPath) ? File.ReadAllLines(logPath).Where(l => l.Trim().Length > 0).ToList() : [];
-        var recs = lines.Select(l => JsonNode.Parse(l) as JsonObject).ToList();
+        var recs = lines.Select(l =>
+        {
+            try { return JsonNode.Parse(l) as JsonObject; }
+            catch (JsonException) { return null; } // keep corrupt lines untouched
+        }).ToList();
         var i = recs.FindLastIndex(r => r?["pergunta"]?.GetValue<string>() == question);
         if (i < 0) return "Nenhuma busca com essa pergunta no log.";
 
@@ -61,7 +65,9 @@ public static class SavingsLog
         hit["manual_tokens"] = manualTokens;
         hit["saved_tokens"] = saved;
         lines[i] = hit.ToJsonString(Json);
-        File.WriteAllText(logPath, string.Concat(lines.Select(l => l + "\n")));
+        var tmp = logPath + ".tmp";
+        File.WriteAllText(tmp, string.Concat(lines.Select(l => l + "\n")));
+        File.Move(tmp, logPath, overwrite: true);
         return $"Fallback registrado: economia desta busca = {saved} tokens.";
     }
 }

@@ -65,7 +65,7 @@ public static class Cli
         try
         {
             var path = configPath ?? Config.DefaultPath();
-            if (command == "index" && !File.Exists(path))
+            if (command == "index" && configPath == null && !File.Exists(path))
             {
                 Config.WriteDefault(path);
                 stderr.WriteLine($"Config não encontrada; criei uma padrão em {path}. Ajuste 'folders' se necessário.");

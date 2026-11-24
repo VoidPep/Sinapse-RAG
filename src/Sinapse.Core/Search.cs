@@ -31,7 +31,7 @@ public static partial class Search
         cmd.CommandText = sql;
         cmd.Parameters.AddWithValue("$m", string.Join(" OR ", terms));
         if (!string.IsNullOrEmpty(tipo)) cmd.Parameters.AddWithValue("$tipo", tipo);
-        if (!string.IsNullOrEmpty(pasta)) cmd.Parameters.AddWithValue("$pasta", pasta);
+        if (!string.IsNullOrEmpty(pasta)) cmd.Parameters.AddWithValue("$pasta", pasta.Replace('\\', '/'));
         cmd.Parameters.AddWithValue("$k", Math.Clamp(k, 1, 20));
 
         var hits = new List<SearchHit>();
