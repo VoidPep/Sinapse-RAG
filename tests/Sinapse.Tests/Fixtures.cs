@@ -1,3 +1,5 @@
+using Sinapse.Core;
+
 namespace Sinapse.Tests;
 
 static class Fixtures
@@ -22,6 +24,9 @@ static class Fixtures
         CopyDir(Path.Combine(Dir, "vault"), dest);
         return dest;
     }
+
+    public static SinapseConfig Cfg(string vault) =>
+        new("t", vault, [], ["**/*.md"], ["**/.obsidian/**"], Path.Combine(vault, ".sinapse"));
 
     static void CopyDir(string src, string dst)
     {
