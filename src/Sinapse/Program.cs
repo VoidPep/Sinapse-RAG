@@ -1,1 +1,3 @@
-﻿Console.WriteLine("Hello, World!");
+﻿using Sinapse;
+
+return Cli.Run(args, Console.Out, Console.Error);
