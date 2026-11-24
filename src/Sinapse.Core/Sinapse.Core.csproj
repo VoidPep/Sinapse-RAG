@@ -3,4 +3,7 @@
     <PackageReference Include="Microsoft.Data.Sqlite" Version="11.0.0" />
     <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="11.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\savings.html" LogicalName="savings.html" />
+  </ItemGroup>
 </Project>
